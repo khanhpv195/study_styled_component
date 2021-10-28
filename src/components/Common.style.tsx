@@ -1,6 +1,6 @@
 import styled from "styled-components";
 interface ButtonProps {
-  background: string;
+  backgroundButton?: string;
   color: string;
   border?: string;
 }
@@ -13,13 +13,17 @@ interface WrapperProps {
 }
 
 export const Button = styled("button")<ButtonProps>`
-  background: ${(props) => props.background || "palevioletred"};
+  background-color: ${(props) =>
+    props.theme.backgroundButton ? props.theme.backgroundButton : "2b2b2b"};
   color: ${(props) => (props.color ? props.color : "blue")};
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
   border: ${(props: any) => (props.border ? props.border : "1px solid white")};
   display: block;
+  &:hover {
+    background-color: bisque;
+  }
 `;
 
 // TEXT P,H1....H6, SPAN,B...
@@ -34,7 +38,8 @@ export const Text = styled("h1")<TextProps>`
 `;
 export const Wrapper = styled("div")<WrapperProps>`
   display: flex;
-  background: ${(props) => props.theme.background};
+  background: ${(props) =>
+    props.theme.background ? props.theme.background : "#056d6d"};
   align-items: center;
   flex-direction: column;
   justify-content: center;
