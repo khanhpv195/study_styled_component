@@ -1,26 +1,29 @@
 import "./App.css";
-import { Button, Wrapper, Text } from "./components/commonStyle";
+import { Button, Text, Wrapper } from "./components/commonStyle";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 
 function App() {
-  const [background, setBackground] = useState("");
-
-  const theme = {
-    background: background,
-  };
+  const [background, setBackground] = useState("dark");
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={{ mode: background }}>
       <Wrapper>
         <Text fontSize="2em">Hello</Text>
       </Wrapper>
       <Button
-        color="#333"
-        border="1px solid red"
-        onClick={() => setBackground("palevioletred")}
+        color="#ffffff"
+        variant="default"
+        onClick={() => setBackground("light")}
       >
-        Change background div
+        Background Light
+      </Button>
+      <Button
+        color="#ffffff"
+        variant="default"
+        onClick={() => setBackground("dark")}
+      >
+        Background Dark
       </Button>
     </ThemeProvider>
   );
