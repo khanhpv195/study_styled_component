@@ -19,7 +19,7 @@ export const Button = styled("button")<ButtonProps>`
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: ${(props: any) => (props.border ? props.border : "1px solid white")};
+  border: ${(props) => (props.border ? props.border : "1px solid white")};
   display: block;
   &:hover {
     background-color: bisque;

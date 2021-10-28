@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button, Wrapper, Text } from "./components/Common.style";
+import { Button, Wrapper, Text } from "./components/commonStyle";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 
